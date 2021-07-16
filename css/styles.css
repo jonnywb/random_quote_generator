@@ -123,8 +123,8 @@ h1 {
 .tag {
   margin-top: 10px;
 }
-
 /***********/
+
 @media (min-width: 768px) {
   body {
     padding: 25px;
