@@ -40,8 +40,7 @@ function changeBackgroundColor() {
 }
 
 /***
- * Not sure how to do this without accessing global variable.
- * initalise quoteInterval, so the if function works.
+ * Initalise quoteInterval, so the IF function works.
  * if it's been set, it uses clearInterval.
  * Then calls set interval on printQuote, and sets it to the quoteInterval variable.
  */
@@ -50,7 +49,6 @@ function intervalFunc() {
   if (quoteInterval) {
     clearInterval(quoteInterval);
   }
-
   quoteInterval = setInterval(printQuote, 8000);
 }
 
@@ -80,9 +78,11 @@ function printQuote() {
   if (quote['tags']) {
     const tags = quote['tags'];
     quoteHTML += `<br><ul class="tags">`;
+
     for ( let i = 0; i < tags.length; i++ ) {
       quoteHTML += `<li class="tag">${tags[i]}</li>`;
     }
+
     quoteHTML += `</ul>`;
   }
   
@@ -95,6 +95,8 @@ function printQuote() {
 
 
 /***
- * printQuote is finally ran when the EventListener detects a click on the 'load-quote' button.
+ * Finally, printQuote is run.
+ * When the EventListener detects a click on the 'load-quote' button, it will change the quote, too.
 ***/
+printQuote();
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
