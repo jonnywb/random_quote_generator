@@ -39,6 +39,12 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = `rgb(${bg1}, ${bg2}, ${bg3})`;
 }
 
+/***
+ * Not sure how to do this without accessing global variable.
+ * initalise quoteInterval, so the if function works.
+ * if it's been set, it uses clearInterval.
+ * Then calls set interval on printQuote, and sets it to the quoteInterval variable.
+ */
 let quoteInterval;
 function intervalFunc() {
   if (quoteInterval) {
